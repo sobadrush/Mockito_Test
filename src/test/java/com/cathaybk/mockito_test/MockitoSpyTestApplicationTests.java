@@ -31,7 +31,9 @@ class MockitoSpyTestApplicationTests {
     @DisplayName("🏁test_001🏁")
     void test_001(TestInfo testInfo) {
         System.err.println("============== " + testInfo.getDisplayName() + " ==============");
+        // 使用 doReturn
         Mockito.doReturn(777).when(addAndSubstractService).add(anyInt(), anyInt());
+        // 使用 thenReturn
         Mockito.when(addAndSubstractService.add(anyInt(), anyInt())).thenReturn(888);
         int ans = calculatorService.doAdd(111, 222);
         System.out.println(ans);
